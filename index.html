@@ -3,24 +3,31 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title>index.html</title>
-		<link rel = "shortcut icon" href = "images/son.jpg" type = "image/jpg">
-		<script>
-			function showcontent(){
-			document.getElementById("Show").innerHTML = "系級：資管二";
-			
-			}
-		</script>
+
 		
 	</head>
-	<body>
-		<div>
-			<h1>This is a demo website</h1>
-			<p>Click the button below to display the hidden content</p>
-			
-			<button type = "button"  onclick = "showcontent()"> <input type="button" style="background-image:url(images/son.jpg);width:280px;height:180px;"><br>Show hidden content</button>
-			<p id ="Show"></p>
-			
-		</div>
 
+	<body>
+			<h2>HELLO</h2>
+			<p><input type = "text" id = "txt1" onkeyup = " myFunction(this.value)"></p>
+			<p>Are you trying to input: <span id = "candidate"></span> ?</p>
+			
+			<script>
+				function myFunction(str){
+					const xhttp = new XMLHttpRequest();
+					
+					if(str.length == 0){
+						doucument.getElementById("canidate").innerHTML = "";
+						return;
+					}
+					
+					xhttp.onload = function(){
+						doucument.getElementById("canidate").innerHTML = this.responseText;
+					}
+					
+					xhttp.open("GET", "./index.php?q="+str);
+					xhttp.send();
+				}
+			</script>
 	</body>
 </html>
