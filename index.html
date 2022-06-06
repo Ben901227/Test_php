@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset = "UTF-8">
-		<title>index.html</title>
+		<title>test</title>
 
 		
 	</head>
@@ -14,15 +14,16 @@
 			
 			<script>
 				function myFunction(str){
+				
 					const xhttp = new XMLHttpRequest();
 					
 					if(str.length == 0){
-						doucument.getElementById("canidate").innerHTML = "";
+						doucument.getElementById("candidate").innerHTML = "";
 						return;
 					}
 					
 					xhttp.onload = function(){
-						doucument.getElementById("canidate").innerHTML = this.responseText;
+						doucument.getElementById("candidate").innerHTML = this.responseText;
 					}
 					
 					xhttp.open("GET", "./index.php?q="+str);
