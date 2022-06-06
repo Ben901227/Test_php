@@ -18,12 +18,12 @@
 					const xhttp = new XMLHttpRequest();
 					
 					if(str.length == 0){
-						doucument.getElementById("candidate").innerHTML = "";
+						document.getElementById("candidate").innerHTML = "";
 						return;
 					}
 					
 					xhttp.onload = function(){
-						doucument.getElementById("candidate").innerHTML = this.responseText;
+						document.getElementById("candidate").innerHTML = this.responseText;
 					}
 					
 					xhttp.open("GET", "./index.php?q="+str);
